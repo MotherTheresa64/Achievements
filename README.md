@@ -39,14 +39,15 @@ Install the project in editable mode:
 python -m pip install -e .
 ```
 
-That provides both the module and the `achievement-lab` console command:
+That provides both the module and the `achievement-lab` console command. Discover the supported catalog first:
 
 ```bash
 achievement-lab --version
+achievement-lab --list
 achievement-lab --achievement pull-shark --count 7
 ```
 
-Example output:
+Example progress output:
 
 ```text
 Pull Shark: 7
@@ -79,6 +80,8 @@ python -m unittest discover -s tests -v
 | Galaxy Brain | 2 | 8 | 16 | 32 |
 | Starstruck | 16 | 128 | 512 | 4096 |
 
+The CLI catalog prints the same supported data in a stable, script-friendly order.
+
 ## Workflow
 
 1. Open or select an issue.
@@ -94,7 +97,7 @@ python -m unittest discover -s tests -v
 - [x] Collaboration templates and security policy
 - [x] Repository structure validation
 - [x] Core progress model
-- [x] CLI interface and JSON output
+- [x] CLI interface, catalog, and JSON output
 - [x] Installable console entry point
 - [x] Unit-test suite
 - [x] Multi-version Python CI
