@@ -2,6 +2,10 @@
 
 A public workflow lab for practicing real GitHub engineering habits: issue-driven development, branching, pull requests, automation, testing, release hygiene, and repository maintenance.
 
+## Purpose
+
+This repository exists to exercise GitHub workflows end-to-end while keeping the work transparent and technically useful. Profile achievements may result from the activity, but the repository is intentionally structured around real code, tests, documentation, automation, and project-maintenance practices.
+
 ## What it does
 
 The repository includes a small typed Python utility that models several GitHub profile-achievement milestones and reports progress toward the next tier. The implementation intentionally uses only the Python standard library so the core logic stays easy to inspect and test.
@@ -16,8 +20,9 @@ The repository includes a small typed Python utility that models several GitHub 
 - automated unit tests
 - GitHub Actions continuous integration
 - project metadata through `pyproject.toml`
-- contribution, security, and conduct policies
+- contribution, security, and ownership policies
 - issue and pull-request templates
+- repository structure validation
 - changelog-driven releases
 
 ## Quick start
@@ -61,11 +66,13 @@ python -m unittest discover -s tests -v
 
 ## Roadmap
 
+- [x] Repository purpose and contribution workflow
+- [x] Collaboration templates and security policy
+- [x] Repository structure validation
 - [x] Core progress model
 - [x] CLI interface
 - [x] Unit-test suite
-- [x] CI workflow
-- [ ] Repository policy and contribution templates
+- [x] Multi-version Python CI
 - [ ] Changelog and first release
 - [ ] Additional achievement metadata and references
 
