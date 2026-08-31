@@ -14,6 +14,7 @@ The format is inspired by Keep a Changelog and the project follows Semantic Vers
 - Bug-report and feature-request issue forms
 - Dependabot updates for GitHub Actions
 - Project code of conduct
+- CodeQL analysis on pull requests, pushes to main, and a weekly schedule
 
 ### Planned
 
