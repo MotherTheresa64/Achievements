@@ -10,7 +10,7 @@ This repository exists to exercise GitHub workflows end-to-end while keeping the
 
 The repository includes a small typed Python utility that models several GitHub profile-achievement milestones and reports progress toward the next tier. The implementation intentionally uses only the Python standard library so the core logic stays easy to inspect and test.
 
-For eligibility notes, evidence quality, unavailable badges, and collaboration requirements, see [`docs/achievements.md`](docs/achievements.md). Release history lives in [`CHANGELOG.md`](CHANGELOG.md), with the release checklist in [`docs/releasing.md`](docs/releasing.md).
+For eligibility notes, evidence quality, unavailable badges, and collaboration requirements, see [`docs/achievements.md`](docs/achievements.md). Release history lives in [`CHANGELOG.md`](CHANGELOG.md), with the release checklist in [`docs/releasing.md`](docs/releasing.md). Contributor expectations are documented in [`CONTRIBUTING.md`](CONTRIBUTING.md) and [`CODE_OF_CONDUCT.md`](CODE_OF_CONDUCT.md).
 
 ## Engineering practices demonstrated
 
@@ -22,9 +22,11 @@ For eligibility notes, evidence quality, unavailable badges, and collaboration r
 - automated unit tests
 - GitHub Actions continuous integration
 - project metadata through `pyproject.toml`
-- contribution, security, and ownership policies
-- issue and pull-request templates
+- contribution, conduct, security, and ownership policies
+- structured issue and pull-request templates
 - repository structure validation
+- automated GitHub Actions dependency updates with Dependabot
+- shared editor and ignore configuration
 - changelog-driven releases
 
 ## Quick start
@@ -82,11 +84,12 @@ python -m unittest discover -s tests -v
 - [x] Collaboration templates and security policy
 - [x] Repository structure validation
 - [x] Core progress model
-- [x] CLI interface
+- [x] CLI interface and JSON output
 - [x] Unit-test suite
 - [x] Multi-version Python CI
 - [x] Achievement metadata and evidence reference
 - [x] Changelog and release process
+- [x] Contributor intake and maintenance configuration
 - [ ] First tagged GitHub release
 
 ## Intent
