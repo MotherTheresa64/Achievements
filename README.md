@@ -21,6 +21,7 @@ For eligibility notes, evidence quality, unavailable badges, and collaboration r
 - typed Python code
 - automated unit tests
 - GitHub Actions continuous integration
+- CodeQL static security analysis
 - project metadata through `pyproject.toml`
 - contribution, conduct, security, and ownership policies
 - structured issue and pull-request templates
@@ -87,6 +88,7 @@ python -m unittest discover -s tests -v
 - [x] CLI interface and JSON output
 - [x] Unit-test suite
 - [x] Multi-version Python CI
+- [x] CodeQL security analysis
 - [x] Achievement metadata and evidence reference
 - [x] Changelog and release process
 - [x] Contributor intake and maintenance configuration
