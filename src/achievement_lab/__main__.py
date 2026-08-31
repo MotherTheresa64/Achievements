@@ -21,8 +21,14 @@ def package_version() -> str:
 def build_parser() -> argparse.ArgumentParser:
     parser = argparse.ArgumentParser(description="Report progress toward a GitHub achievement tier.")
     parser.add_argument("--version", action="version", version=f"%(prog)s {package_version()}")
-    parser.add_argument("--achievement", choices=sorted(ACHIEVEMENTS), required=True)
-    parser.add_argument("--count", type=int, required=True)
+    parser.add_argument(
+        "--list",
+        action="store_true",
+        dest="list_achievements",
+        help="List supported achievements and their tracked thresholds.",
+    )
+    parser.add_argument("--achievement", choices=sorted(ACHIEVEMENTS))
+    parser.add_argument("--count", type=int)
     parser.add_argument(
         "--json",
         action="store_true",
@@ -32,8 +38,24 @@ def build_parser() -> argparse.ArgumentParser:
     return parser
 
 
+def print_catalog() -> None:
+    """Print the supported achievement catalog in a stable order."""
+    for achievement in sorted(ACHIEVEMENTS):
+        thresholds = ", ".join(str(value) for value in ACHIEVEMENTS[achievement])
+        print(f"{achievement}: {thresholds}")
+
+
 def main() -> None:
-    args = build_parser().parse_args()
+    parser = build_parser()
+    args = parser.parse_args()
+
+    if args.list_achievements:
+        print_catalog()
+        return
+
+    if args.achievement is None or args.count is None:
+        parser.error("--achievement and --count are required unless --list is used")
+
     progress = get_progress(args.achievement, args.count)
 
     if args.as_json:

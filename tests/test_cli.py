@@ -1,7 +1,7 @@
 import io
 import json
 import unittest
-from contextlib import redirect_stdout
+from contextlib import redirect_stderr, redirect_stdout
 from unittest.mock import patch
 
 from achievement_lab.__main__ import main
@@ -40,6 +40,30 @@ class CliTests(unittest.TestCase):
         first = self.run_cli("--achievement", "galaxy-brain", "--count", "3", "--json")
         second = self.run_cli("--achievement", "galaxy-brain", "--count", "3", "--json")
         self.assertEqual(first, second)
+
+    def test_catalog_output_is_sorted_and_complete(self) -> None:
+        output = self.run_cli("--list").splitlines()
+        self.assertEqual(
+            output,
+            [
+                "galaxy-brain: 2, 8, 16, 32",
+                "pair-extraordinaire: 1, 10, 24, 48",
+                "pull-shark: 2, 16, 128, 1024",
+                "starstruck: 16, 128, 512, 4096",
+            ],
+        )
+
+    def test_missing_progress_arguments_are_rejected(self) -> None:
+        errors = io.StringIO()
+        with (
+            patch("sys.argv", ["achievement_lab"]),
+            redirect_stderr(errors),
+            self.assertRaises(SystemExit) as exit_context,
+        ):
+            main()
+
+        self.assertEqual(exit_context.exception.code, 2)
+        self.assertIn("--achievement and --count are required", errors.getvalue())
 
     def test_version_flag(self) -> None:
         output = io.StringIO()
