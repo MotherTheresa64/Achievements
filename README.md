@@ -42,6 +42,16 @@ Next tier: bronze at 16
 Remaining: 9
 ```
 
+For machine-readable output, add `--json`:
+
+```bash
+python -m achievement_lab --achievement pull-shark --count 7 --json
+```
+
+```json
+{"achievement": "pull-shark", "count": 7, "current_tier": "base", "next_threshold": 16, "next_tier": "bronze", "remaining": 9}
+```
+
 Run the tests:
 
 ```bash
