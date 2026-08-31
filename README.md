@@ -21,6 +21,7 @@ For eligibility notes, evidence quality, unavailable badges, and collaboration r
 - typed Python code
 - automated unit tests
 - GitHub Actions continuous integration
+- package build and wheel smoke testing
 - CodeQL static security analysis
 - project metadata through `pyproject.toml`
 - contribution, conduct, security, and ownership policies
@@ -32,9 +33,17 @@ For eligibility notes, evidence quality, unavailable badges, and collaboration r
 
 ## Quick start
 
+Install the project in editable mode:
+
 ```bash
 python -m pip install -e .
-python -m achievement_lab --achievement pull-shark --count 7
+```
+
+That provides both the module and the `achievement-lab` console command:
+
+```bash
+achievement-lab --version
+achievement-lab --achievement pull-shark --count 7
 ```
 
 Example output:
@@ -48,7 +57,7 @@ Remaining: 9
 For machine-readable output, add `--json`:
 
 ```bash
-python -m achievement_lab --achievement pull-shark --count 7 --json
+achievement-lab --achievement pull-shark --count 7 --json
 ```
 
 ```json
@@ -86,8 +95,10 @@ python -m unittest discover -s tests -v
 - [x] Repository structure validation
 - [x] Core progress model
 - [x] CLI interface and JSON output
+- [x] Installable console entry point
 - [x] Unit-test suite
 - [x] Multi-version Python CI
+- [x] Distribution build validation
 - [x] CodeQL security analysis
 - [x] Achievement metadata and evidence reference
 - [x] Changelog and release process
