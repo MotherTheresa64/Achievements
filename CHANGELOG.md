@@ -10,6 +10,8 @@ The format is inspired by Keep a Changelog and the project follows Semantic Vers
 
 - Deterministic JSON output for the command-line interface
 - CLI tests covering text and machine-readable output
+- Installable `achievement-lab` console command and version flag
+- Distribution build and wheel smoke testing in GitHub Actions
 - Python-focused ignore rules and shared editor configuration
 - Bug-report and feature-request issue forms
 - Dependabot updates for GitHub Actions
