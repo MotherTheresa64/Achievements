@@ -1,0 +1,26 @@
+name: Documentation improvement
+description: Suggest a clarity or workflow documentation improvement
+title: "docs: "
+labels: []
+body:
+  - type: textarea
+    id: problem
+    attributes:
+      label: What needs improvement?
+      description: Describe the confusing, missing, or outdated documentation.
+    validations:
+      required: true
+  - type: textarea
+    id: outcome
+    attributes:
+      label: Desired outcome
+      description: Explain what a successful update should make clearer.
+    validations:
+      required: true
+  - type: checkboxes
+    id: scope
+    attributes:
+      label: Scope check
+      options:
+        - label: This request is focused on one documentation or workflow concern.
+          required: true
