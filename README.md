@@ -1,34 +1,78 @@
 # GitHub Achievements Lab
 
-A public sandbox for practicing real GitHub workflows: branching, pull requests, issues, reviews, automation, release hygiene, and repository maintenance.
+A public workflow lab for practicing real GitHub engineering habits: issue-driven development, branching, pull requests, automation, testing, release hygiene, and repository maintenance.
 
-## Purpose
+## What it does
 
-This repository is intentionally small. Its goal is to provide a safe place to exercise GitHub features end-to-end while keeping every change transparent and reviewable.
+The repository includes a small typed Python utility that models several GitHub profile-achievement milestones and reports progress toward the next tier. The implementation intentionally uses only the Python standard library so the core logic stays easy to inspect and test.
 
-## What this repo demonstrates
+## Engineering practices demonstrated
 
-- Feature-branch development
-- Pull-request based changes
-- Issue tracking and closure
-- GitHub Actions automation
-- Contribution and pull-request templates
-- Repository documentation
-- Conventional, scoped commit history
+- issue-driven development
+- short-lived feature branches
+- pull-request based changes
+- conventional-style commit messages
+- typed Python code
+- automated unit tests
+- GitHub Actions continuous integration
+- project metadata through `pyproject.toml`
+- contribution, security, and conduct policies
+- issue and pull-request templates
+- changelog-driven releases
+
+## Quick start
+
+```bash
+python -m pip install -e .
+python -m achievement_lab --achievement pull-shark --count 7
+```
+
+Example output:
+
+```text
+Pull Shark: 7
+Next tier: bronze at 16
+Remaining: 9
+```
+
+Run the tests:
+
+```bash
+python -m unittest discover -s tests -v
+```
+
+## Supported milestone data
+
+| Achievement | Base | Bronze | Silver | Gold |
+| --- | ---: | ---: | ---: | ---: |
+| Pull Shark | 2 | 16 | 128 | 1024 |
+| Pair Extraordinaire | 1 | 10 | 24 | 48 |
+| Galaxy Brain | 2 | 8 | 16 | 32 |
+| Starstruck | 16 | 128 | 512 | 4096 |
 
 ## Workflow
 
 1. Open or select an issue.
 2. Create a focused branch.
-3. Make a small, testable change.
+3. Make a testable change.
 4. Open a pull request describing the change.
 5. Verify automated checks.
 6. Merge and close the related work.
 
-## Why this exists
+## Roadmap
 
-GitHub profile achievements are a fun side effect, but the repository's actual purpose is hands-on practice with the collaboration and automation features used in real software projects. Activity here is intentionally documented rather than presented as outside collaboration or production work.
+- [x] Core progress model
+- [x] CLI interface
+- [x] Unit-test suite
+- [x] CI workflow
+- [ ] Repository policy and contribution templates
+- [ ] Changelog and first release
+- [ ] Additional achievement metadata and references
 
-## Status
+## Intent
 
-Active workflow playground maintained by [MotherTheresa64](https://github.com/MotherTheresa64).
+GitHub achievements are a fun side effect, but this repository is maintained as an inspectable engineering exercise rather than as fake outside collaboration or production experience. Every change should leave behind useful code, tests, documentation, or process.
+
+## License
+
+MIT. See `LICENSE`.
