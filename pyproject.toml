@@ -11,6 +11,9 @@ requires-python = ">=3.11"
 license = {text = "MIT"}
 authors = [{name = "Noah Ragan"}]
 
+[project.scripts]
+achievement-lab = "achievement_lab.__main__:main"
+
 [tool.setuptools]
 package-dir = {"" = "src"}
 
