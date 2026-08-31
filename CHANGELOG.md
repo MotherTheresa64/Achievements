@@ -6,9 +6,13 @@ The format is inspired by Keep a Changelog and the project follows Semantic Vers
 
 ## [Unreleased]
 
+### Added
+
+- Deterministic JSON output for the command-line interface
+- CLI tests covering text and machine-readable output
+
 ### Planned
 
-- Additional CLI output formats
 - More achievement metadata and validation
 - Release automation once the release process is stable
 
