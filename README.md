@@ -10,7 +10,7 @@ This repository exists to exercise GitHub workflows end-to-end while keeping the
 
 The repository includes a small typed Python utility that models several GitHub profile-achievement milestones and reports progress toward the next tier. The implementation intentionally uses only the Python standard library so the core logic stays easy to inspect and test.
 
-For eligibility notes, evidence quality, unavailable badges, and collaboration requirements, see [`docs/achievements.md`](docs/achievements.md).
+For eligibility notes, evidence quality, unavailable badges, and collaboration requirements, see [`docs/achievements.md`](docs/achievements.md). Release history lives in [`CHANGELOG.md`](CHANGELOG.md), with the release checklist in [`docs/releasing.md`](docs/releasing.md).
 
 ## Engineering practices demonstrated
 
@@ -76,7 +76,8 @@ python -m unittest discover -s tests -v
 - [x] Unit-test suite
 - [x] Multi-version Python CI
 - [x] Achievement metadata and evidence reference
-- [ ] Changelog and first release
+- [x] Changelog and release process
+- [ ] First tagged GitHub release
 
 ## Intent
 
