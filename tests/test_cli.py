@@ -41,6 +41,19 @@ class CliTests(unittest.TestCase):
         second = self.run_cli("--achievement", "galaxy-brain", "--count", "3", "--json")
         self.assertEqual(first, second)
 
+    def test_version_flag(self) -> None:
+        output = io.StringIO()
+        with (
+            patch("sys.argv", ["achievement_lab", "--version"]),
+            patch("achievement_lab.__main__.package_version", return_value="0.1.0"),
+            redirect_stdout(output),
+            self.assertRaises(SystemExit) as exit_context,
+        ):
+            main()
+
+        self.assertEqual(exit_context.exception.code, 0)
+        self.assertIn("achievement_lab 0.1.0", output.getvalue())
+
 
 if __name__ == "__main__":
     unittest.main()

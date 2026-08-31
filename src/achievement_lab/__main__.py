@@ -5,12 +5,22 @@ from __future__ import annotations
 import argparse
 import json
 from dataclasses import asdict
+from importlib.metadata import PackageNotFoundError, version
 
 from .progress import ACHIEVEMENTS, get_progress
 
 
+def package_version() -> str:
+    """Return the installed package version, with a source-tree fallback."""
+    try:
+        return version("achievement-lab")
+    except PackageNotFoundError:
+        return "0+unknown"
+
+
 def build_parser() -> argparse.ArgumentParser:
     parser = argparse.ArgumentParser(description="Report progress toward a GitHub achievement tier.")
+    parser.add_argument("--version", action="version", version=f"%(prog)s {package_version()}")
     parser.add_argument("--achievement", choices=sorted(ACHIEVEMENTS), required=True)
     parser.add_argument("--count", type=int, required=True)
     parser.add_argument(
